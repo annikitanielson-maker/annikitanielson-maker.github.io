@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="Annika Nielson is transitioning into tech, exploring project management, product management, and quality assurance."
+  >
+  <title>Annika Nielson | Breaking into Tech</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+     :root {
+  --background: #f9f5f4;    /* soft cream */
+  --surface: #ffffff;        /* white cards */
+  --text: #2d2340;           /* deep plum/lavender text */
+  --muted: #6d5d7a;          /* muted purple-gray */
+  --accent: #7a5d8d;         /* lavender/plum */
+  --accent-light: #f0e7f6;   /* light lavender tint */
+  --border: #eadff1;         /* soft purple border */
+  --shadow: 0 12px 35px rgba(58, 43, 72, 0.08);
+
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: "Plus Jakarta Sans", sans-serif;
+      line-height: 1.65;
+    }
+
+    h1, h2, h3 {
+      font-family: "Plus Jakarta Sans", sans-serif;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(100% - 40px, 1000px);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(247, 248, 246, 0.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    nav {
+      display: flex;
+      min-height: 68px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--text);
+      font-weight: 750;
+      text-decoration: none;
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.94rem;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 82px 0 64px;
+    }
+
+    .profile-photo {
+      display: block;
+      width: 130px;
+      height: 130px;
+      margin-bottom: 26px;
+      border: 3px solid var(--surface);
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(2.8rem, 8vw, 5.3rem);
+      line-height: 1.02;
+      letter-spacing: -0.065em;
+    }
+
+    .hero-copy {
+      max-width: 680px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 17px;
+      border: 1px solid var(--accent);
+      border-radius: 7px;
+      background: var(--accent);
+      color: white;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      background: #205849;
+      text-decoration: none;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    .button.secondary:hover {
+      background: var(--accent-light);
+    }
+
+    .details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      margin-top: 30px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 34px 0;
+      scroll-margin-top: 84px;
+    }
+
+    .section-heading {
+      margin-bottom: 18px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(1.65rem, 4vw, 2.15rem);
+      letter-spacing: -0.04em;
+    }
+
+    .section-heading p {
+      margin: 5px 0 0;
+      color: var(--muted);
+    }
+
+    .panel {
+      padding: clamp(22px, 5vw, 34px);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .panel p {
+      margin: 0;
+    }
+
+    .panel p + p {
+      margin-top: 14px;
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .focus-card {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .focus-card h3 {
+      margin: 0 0 7px;
+      font-size: 1.05rem;
+    }
+
+    .focus-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .project-card {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .project-card h3 {
+      margin: 0 0 6px;
+      font-size: 1.15rem;
+    }
+
+    .project-card p {
+      max-width: 650px;
+      margin-bottom: 16px;
+      color: var(--muted);
+    }
+
+    .status {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .skill-group + .skill-group {
+      margin-top: 22px;
+    }
+
+    .skill-group h3 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .tag {
+      padding: 7px 11px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #fbfcfb;
+      color: var(--text);
+      font-size: 0.91rem;
+    }
+
+    .experience-entry h3 {
+      margin: 0 0 6px;
+      font-size: 1.1rem;
+    }
+
+    .experience-entry p {
+      color: var(--muted);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 22px;
+      margin-top: 18px;
+    }
+
+    .contact-links a {
+      font-weight: 650;
+    }
+
+    footer {
+      padding: 34px 0 44px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 680px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        gap: 12px 18px;
+      }
+
+      .hero {
+        padding-top: 60px;
+      }
+
+      .focus-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container" aria-label="Main navigation">
+      <a class="brand" href="#home">Annika Nielson</a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#focus">My focus</a>
+        <a href="#projects">Project</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <img
+        class="profile-photo"
+        src="annika.jpeg"
+        alt="Portrait of Annika Nielson"
+      >
+
+      <p class="eyebrow">Career transition · Draper, Utah</p>
+      <h1>Breaking into tech, one step at a time.</h1>
+
+      <p class="hero-copy">
+        Hi, I’m Annika. I’m building my skills for a first role in tech, with
+        interests in project management, product management, and quality
+        assurance. I’m drawn to work that helps teams turn ideas into useful,
+        well-tested products.
+      </p>
+
+      <div class="button-row">
+        <a class="button" href="#about">Get to know me</a>
+        <a class="button secondary" href="mailto:Annikitanielson@gmail.com">
+          Email me
+        </a>
+      </div>
+
+      <div class="details">
+        <span>Draper, Utah</span>
+        <a href="mailto:Annikitanielson@gmail.com">
+          Annikitanielson@gmail.com
+        </a>
+      </div>
+    </section>
+
+    <section class="container" id="about">
+      <div class="section-heading">
+        <h2>A little about me</h2>
+        <p>What motivates this next chapter</p>
+      </div>
+
+      <div class="panel">
+        <p>
+          I’m transitioning my career into the tech industry, with a focus on
+          project management, product management, and QA testing. I chose tech
+          because of its fast-paced innovation and its ability to bring teams
+          together to build things and solve problems with meaningful solutions.
+        </p>
+        <p>
+          I’m excited to explore tech roles, keep developing my skills, and
+          challenge myself as I work toward my first entry-level job opportunity.
+          Outside of studying, I’m a spouse and proud parent to a beautiful baby
+          girl. Family is a big part of what motivates me through this career
+          change.
+        </p>
+      </div>
+    </section>
+
+    <section class="container" id="focus">
+      <div class="section-heading">
+        <h2>Where I’m headed</h2>
+        <p>Areas I’m exploring as I build my tech foundation</p>
+      </div>
+
+      <div class="focus-grid">
+        <article class="focus-card">
+          <h3>Project management</h3>
+          <p>
+            Helping organize work, keep teams aligned, and move projects forward.
+          </p>
+        </article>
+
+        <article class="focus-card">
+          <h3>Product management</h3>
+          <p>
+            Understanding needs and helping shape what teams build.
+          </p>
+        </article>
+
+        <article class="focus-card">
+          <h3>Quality assurance</h3>
+          <p>
+            Checking that products work as intended and noticing what can improve.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container" id="projects">
+      <div class="section-heading">
+        <h2>My first project</h2>
+        <p>Learning by making something of my own</p>
+      </div>
+
+      <article class="panel project-card">
+        <div>
+          <h3>A website about me</h3>
+          <p>
+            I’m creating this website as a first step in learning how to build
+            for the web. It’s a place to share my career transition and practice
+            with HTML, CSS, and JavaScript as I learn.
+          </p>
+          <div class="tags" aria-label="Project skills">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </div>
+        
+      </article>
+    </section>
+
+    <section class="container" id="experience">
+      <div class="section-heading">
+        <h2>Experience</h2>
+        <p>Part of my journey into tech</p>
+      </div>
+
+      <div class="panel experience-entry">
+        <h3>Tech-Moms</h3>
+        <p>
+          A part of my career transition as I explore the tech industry and
+          continue building new skills.
+        </p>
+      </div>
+    </section>
+
+    <section class="container" id="skills">
+      <div class="section-heading">
+        <h2>Skills</h2>
+        <p>Technical skills I’m learning and strengths I bring</p>
+      </div>
+
+      <div class="panel">
+        <div class="skill-group">
+          <h3>Technical skills</h3>
+          <div class="tags">
+            <span class="tag">Coding</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Transferable strengths</h3>
+          <div class="tags">
+            <span class="tag">Communication</span>
+            <span class="tag">Adaptability</span>
+            <span class="tag">Organization</span>
+            <span class="tag">Scheduling</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="contact">
+      <div class="section-heading">
+        <h2>Let’s connect</h2>
+        <p>I’m excited to keep learning and growing in tech.</p>
+      </div>
+
+      <div class="panel">
+        <p>
+          If you’d like to connect, you can reach me by email or find me on
+          LinkedIn.
+        </p>
+
+        <div class="contact-links">
+          <a href="mailto:Annikitanielson@gmail.com">Email Annika</a>
+          <a
+            href="https://www.linkedin.com/in/annika-nielson321"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    © 2026 Annika Nielson
+  </footer>
+</body>
+</html>
